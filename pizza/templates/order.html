@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+    ORDER PAGE
+{% endblock %}
+
+{% block body %} 
+    <div style="margin-left: 150px;" class="bar-container1">
+        <h1 style="color: navy;"> Order Dashboard</h1>
+        <h3 style="color: blue;text-align: center;">Create an Order</h3>
+    </div>
+
+    <div style="display: flex;justify-content: center;">
+        <div class="col-xl-8">
+          <!-- Account settings card-->
+          <br>
+          <br>
+          <div class="card mb-4" style="margin-left: 20px;">
+              <div class="card-header" style="color: navy;font-weight: bold;font-size: 22px;text-align: center;border-bottom: 5px solid lightgray;">Register Your Order</div>
+                <div class="card-body">
+                    <form action="/create/order" method="post">
+                        <div class="row gx-3 mb-3">
+                          <!-- Form Group (flavour)-->
+                            <div class="col-md-6">
+                                <label style="color: red;font-weight: bold;" class="small mb-1" for="flavour">Flavour</label>
+                                <input class="form-control" id="flavour"name="flavour" type="text" placeholder="Choose Your Flavour" >
+                            </div>
+                          <!-- Form Group (size)-->
+                          <div class="col-md-6">
+                              <label style="color: red;font-weight: bold;" class="small mb-1" for="size">Size</label>
+                              <input class="form-control" id="size"name="size" type="text" placeholder="Enter your Size" >
+                          </div>
+                        </div>
+                        <div class="row gx-3 mb-3">
+                        <!-- Form Group (quantity)-->
+                            <div class="col-md-6">
+                                <label style="color: red;font-weight: bold;" class="small mb-1" for="quantity">Quantity</label>
+                                <input class="form-control" id="quantity"name="quantity" type="number" placeholder="Enter your Quantity">
+                            </div>
+                            <!-- Form Group (user id)-->
+                            <div class="col-md-6">
+                                <label style="color: red;font-weight: bold;" class="small mb-1" for="user_id">User ID</label>
+                                <input class="form-control" id="user_id" name="user_id" type="number" placeholder="Enter User ID">
+                            </div>
+                        </div>
+                      <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                          <!-- Form Group (order status)-->
+                          <div class="col-md-6">
+                              <label style="color: red;font-weight: bold;" class="small mb-1" for="order_status">Order Status</label>
+                              <input class="form-control" id="order_status" name="order_status" type="text" placeholder="Order Status" >
+                          </div>
+                        </div>
+                      <center>
+                        <button style="background: green;" class="btn btn-primary" type="submit">Create Order</button>
+                      </center>
+                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

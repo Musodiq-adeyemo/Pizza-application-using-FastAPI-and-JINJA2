@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+     ALL ORDER PAGE
+{% endblock %}
+
+{% block body %} 
+    <div style="margin-left: 150px;" class="bar-container1">
+        <h1 style="color: navy;"> All Order Dashboard</h1>
+        <h3 style="color: blue;text-align: center;">Check All Orders</h3>
+    </div>
+
+    <div class="general-container-t">
+      <div style="width: 62%;margin: 50px;margin-left: 180px;" class="styled-table">
+        <table>
+          <thead >
+            <tr>
+              <th>Order Id</th>
+              <th>Flavour</th>
+              <th>Quantity</th>
+              <th>Size</th>
+              <th>Order_status</th>
+              <th>Owner</th>
+            </tr>
+          </thead>
+          
+          {% for order in orders %}
+          {% for user in users %}
+          {% if order.user_id == user.id %}
+          <tbody class="body">
+            <tr>
+              <td>{{order.id}}</td>
+              <td>{{order.flavour}}</td>
+              <td>{{order.quantity}}</td>
+              <td>{{order.size}}</td>
+              <td>{{order.order_status}}</td>
+              <td>{{user.username}}</td>
+            </tr>
+          </tbody>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </table>
+      </div>  
+{% endblock %}
